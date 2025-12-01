@@ -1,0 +1,175 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+header button{
+  padding: 8px 16px;
+  background-color: #00d4d4;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: black;
+}
+header button i{
+  margin-right: 8px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+li{
+  margin-bottom: 15px;
+  background-color: rgb(7, 7, 7);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+}
+li h2{
+  margin-bottom: 8px;
+  font-size: 20px;
+}
+li p{
+  font-size: 16px;
+  color: #c0c0c0;
+  display: flex;
+}
+li span{
+  color: #c0c0c0;
+  margin-right: 18px;
+  margin-top: 15px;
+}
+
+.opcoes .pen{
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: rgb(160, 160, 160);
+}
+.pen svg{
+  width: 18px;
+  height: 18px;
+}
+.ver-mais{
+  cursor: pointer;
+  background-color: #00d4d4;
+  border-radius: 8px;
+  height: 30px;
+  width: 115px;
+  padding-bottom: 3px;
+  border: none;
+  font-weight: bold;
+}
+.ver-mais svg{
+  width: 18px;
+  height: 18px;
+  transform: translateY(15%);
+  margin-right: 10px;
+  font-weight: normal;
+}
+
+.issues{
+  color: rgb(222, 222, 0);
+  margin-right: 5px;
+}
+.abertas{
+  color: #00d4d4;
+}
+.bloqueadas{
+  color: rgb(255, 88, 88);
+}
+
+dialog::backdrop{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+dialog{
+  margin: auto;
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgb(10, 10, 10);
+  color: white;
+  border: solid 0.5px #00a2a289;
+  box-shadow: 0 0 5px #00ffffa5;
+}
+dialog header{
+  margin-bottom: 20px;
+}
+dialog form{
+  display: flex;
+  flex-direction: column;
+}
+dialog label{
+  margin-bottom: 8px;
+}
+dialog input, dialog textarea{
+  margin-bottom: 5px;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: rgb(4, 4, 4);
+  color: rgb(209, 209, 209);
+}
+dialog textarea{
+  resize: vertical;
+  min-height: 70px;
+}
+dialog input:focus, dialog textarea:focus{
+  color: #c0c0c0;
+  border: solid 0.5px #00a2a289;
+  box-shadow: 0 0 5px #00ffffa5;
+}
+dialog select{
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background-color: rgb(4, 4, 4);
+  color: #c0c0c0;
+  width: 25%;
+}
+dialog footer{
+  display: flex;
+  justify-content: flex-end;
+}
+dialog footer button{
+  padding: 7px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+}
+dialog footer button:first-child{
+  background-color: transparent;
+  color: rgb(151, 151, 151);
+}
+dialog footer button:last-child{
+  background-color: #00d4d4;
+  color: black;
+  font-weight: bolder;
+  box-shadow: 0px 0px 3px #00d4d4;
+}
