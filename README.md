@@ -1,16 +1,38 @@
-# React + Vite
+Este é o frontend de uma plataforma de gerenciamento de cursos, desenvolvida para permitir a criação, listagem e visualização detalhada de conteúdos educacionais.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> **⚠️ Projeto em Desenvolvimento:** Algumas funcionalidades podem estar incompletas ou em fase de testes.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades Atuais
 
-## React Compiler
+- [x] **Listagem de Cursos:** Visualização de todos os cursos cadastrados em formato de cards/grid.
+- [x] **Detalhes do Curso:** Página individual com informações completas sobre um curso específico.
+- [ ] **Criação de Cursos:** Formulário para adição de novos cursos (Em desenvolvimento).
+- [ ] **Edição/Exclusão:** Funcionalidades de gerenciamento (Planejado).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+As principais ferramentas usadas no projeto até agora:
+
+* **Framework:** [React.js / Vue.js / Next.js - *Escolha o seu*]
+* **Estilização:** Tailwind CSS / Styled Components
+* **Gerenciamento de Estado:** Context API / Redux / Zustand
+* **Consumo de API:** Axios / Fetch API
+
+---
+
+## 📦 Como rodar o projeto
+
+### Pré-requisitos
+Antes de começar, você vai precisar ter instalado em sua máquina:
+* [Node.js](https://nodejs.org/en/)
+* Gerenciador de pacotes (NPM, Yarn ou PNPM)
+
+### Passo a passo
+
+1. **Clone o repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)# Projeto-Final-Modulo-II-Frontend-Incode

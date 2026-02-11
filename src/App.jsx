@@ -1,77 +1,118 @@
-import { useState } from 'react';
-import HeaderApp from './components/HeaderApp.jsx';
-import ListaDeProjetos from './components/ListaDeProjetos.jsx';
-import "./App.css";
-import { EyeClosed, X } from 'lucide-react';
-import Dialog from './components/Dialog.jsx';
+import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import HeaderApp from "./components/HeaderApp.jsx";
+import ListaDeProjetos from "./components/ListaDeProjetos.jsx";
+import Dialog from "./components/Dialog.jsx";
+import DetalhesProjeto from "./components/DetalhesProjeto.jsx";
+import './App.css'
 
 const App = () => {
   const [projetos, setProjetos] = useState([
     {
       id: 1,
-      nome: 'Website redesign',
-      descricao: 'Renovação completa do website corporativo',
-      tags: ['design', 'frontend'],
+      nome: "Website redesign",
+      descricao: "Renovação completa do website corporativo",
+      tags: ["design", "frontend"],
       status: true,
       issues: 2,
       abertas: 2,
-      bloqueadas: 0    
+      bloqueadas: 0,
     },
     {
       id: 2,
-      nome: 'API REST v2',
-      descricao: 'Nova versão da API REST com melhor performance',
-      tags: ['backend', 'api'],
+      nome: "API REST v2",
+      descricao: "Nova versão da API REST com melhor performance",
+      tags: ["backend", "api"],
       status: true,
       issues: 1,
       abertas: 1,
-      bloqueadas: 1
-    }
+      bloqueadas: 1,
+    },
   ]);
 
+  // controla se o dialog está aberto
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  // estado para o novo projeto
+  const [novoProjeto, setNovoProjeto] = useState({
+    nome: "",
+    descricao: "",
+    tags: "",
+    status: "ativo"
+  });
+
   function onShowModal() {
-    const dialog = document.querySelector('dialog');
-    dialog.showModal();
+    setIsDialogOpen(true);
   }
 
   function closeDialog() {
-    const dialog = document.querySelector('dialog');
-    dialog.close();
+    setIsDialogOpen(false);
   }
-  
-  function createProject() {
-    const dialog = document.querySelector('dialog');
-    const nome = dialog.querySelector('input[name="nomeProjeto"]').value;
-    const descricao = dialog.querySelector('textarea[name="descricaoProjeto"]').value;
-    const tags = dialog.querySelector('input[name="tags"]').value.split(',').map(tag => tag.trim());
-    const status = dialog.querySelector('select[name="statusProjeto"]').value === 'ativo';
 
-    const newProject = {
+  function handleChange(e) {
+
+    
+    setNovoProjeto({
+      ...novoProjeto,
+      [e.target.name]: e.target.value
+    });
+  }
+
+  function createProject(e) {
+    e.preventDefault();
+
+    const novo = {
       id: projetos.length + 1,
-      nome,
-      descricao,
-      tags: [''],
-      status: true,
+      nome: novoProjeto.nome,
+      descricao: novoProjeto.descricao,
+      tags: novoProjeto.tags.split(',').map(t => t.trim()),
+      status: novoProjeto.status === "ativo",
       issues: 0,
       abertas: 0,
       bloqueadas: 0
     };
-    setProjetos([...projetos, newProject]);
-    console.log(setProjetos)
-    dialog.close();
+
+    setProjetos([...projetos, novo]);
+    setIsDialogOpen(false);
+
+    // limpa os campos
+    setNovoProjeto({
+      nome: "",
+      descricao: "",
+      tags: "",
+      status: "ativo"
+    });
   }
-  console.log(projetos);
-  return (
+
+ return (
     <>
-      <HeaderApp onShowModal={onShowModal}/>
-      <ListaDeProjetos  projetos={projetos}/>
-      <Dialog 
-      onShowModal={onShowModal} 
-      closeDialog={closeDialog} 
-      createProject={createProject}
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <HeaderApp onShowModal={onShowModal}/>
+              <ListaDeProjetos projetos={projetos} />
+            </>
+        }
+        />
+
+        <Route
+          path="/projeto/:id"
+          element={<DetalhesProjeto projetos={projetos} />}
+        />
+      </Routes>
+
+      <Dialog
+        isOpen={isDialogOpen}
+        closeDialog={closeDialog}
+        novoProjeto={novoProjeto}
+        handleChange={handleChange}
+        createProject={createProject}
       />
     </>
   );
-}
+};
 
 export default App;

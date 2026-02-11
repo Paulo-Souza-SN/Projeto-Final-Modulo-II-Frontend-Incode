@@ -1,0 +1,32 @@
+.btn-voltar-detalhes{
+   background-color: transparent;
+   color: gray;
+   border: none;
+   margin-bottom: 25px;
+}
+.btn-voltar-detalhes svg{
+   transform: translatey(15%);
+   margin-right: 10px;
+   height: 18px;
+   width: 18px;
+}
+.header-descricao{
+   margin-bottom: 15px;
+}
+
+.opcoes-detalhes button:first-child{
+   background-color: rgb(10, 10, 10);
+   border: 1px gray;
+   color: gray;
+   font-size: 12px;
+   margin-right: 10px;
+   padding: 8px 16px;
+}
+.opcoes-detalhes button:first-child svg{
+   padding: 7px 10px;
+   background-color: rgb(0, 191, 255);
+}
+li > header > span{
+   transform: translateY(-60%);
+   margin-left: 10px;
+}
