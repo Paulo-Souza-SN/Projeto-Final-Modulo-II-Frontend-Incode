@@ -8,7 +8,7 @@ Este é o frontend de uma plataforma de gerenciamento de cursos, desenvolvida pa
 
 - [x] **Listagem de Cursos:** Visualização de todos os cursos cadastrados em formato de cards/grid.
 - [x] **Detalhes do Curso:** Página individual com informações completas sobre um curso específico.
-- [ ] **Criação de Cursos:** Formulário para adição de novos cursos (Em desenvolvimento).
+- [x] **Criação de Cursos:** Formulário para adição de novos cursos.
 - [ ] **Edição/Exclusão:** Funcionalidades de gerenciamento (Planejado).
 
 ---
@@ -17,10 +17,9 @@ Este é o frontend de uma plataforma de gerenciamento de cursos, desenvolvida pa
 
 As principais ferramentas usadas no projeto até agora:
 
-* **Framework:** [React.js / Vue.js / Next.js - *Escolha o seu*]
-* **Estilização:** Tailwind CSS / Styled Components
-* **Gerenciamento de Estado:** Context API / Redux / Zustand
-* **Consumo de API:** Axios / Fetch API
+* **Framework:** React.js
+* **Estilização:** CSS
+* **Consumo de API:** Fetch API
 
 ---
 
